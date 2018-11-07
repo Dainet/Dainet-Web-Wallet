@@ -1,0 +1,148 @@
+
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+#layout {
+    min-height: 80vh;
+    position: relative;
+    left: 0;
+    padding-left: 0;
+}
+#layout.active #menu {
+    left: 190px;
+    width: 190px;
+}
+
+#layout.active .menu-link {
+    left: 190px;
+}
+
+
+#menu {
+    margin-left: -190px; 
+    width: 190px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; 
+    background: #333;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-right: 2px solid #2d3e50;
+}
+
+#menu a {
+    color: #eee;
+    border: none;
+    padding: 0.6em 0 0.6em 0.6em;
+}
+
+#menu .pure-menu,
+#menu .pure-menu ul {
+    border: none;
+    background: transparent;
+}
+
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+    background: #333;
+}
+
+#menu .pure-menu-selected {
+    background: #1f8dd6;
+}
+
+#menu .pure-menu-selected a {
+    color: #fff;
+}
+
+#menu #logoutButton {
+    color: red;
+}
+
+#menu .pure-menu-heading {
+    font-size: 110%;
+    color: #fff;
+    margin: 0;
+    height: 60px;
+    line-height: 64px;
+}
+
+.menu-link {
+    position: fixed;
+    display: block; 
+    top: 0;
+    left: 0; 
+    font-size: 10px; 
+    z-index: 3000;
+    width: 6em;
+    height: auto;
+    padding: 3em 2em;
+
+}
+
+.menu-link span {
+    position: relative;
+    display: block;
+}
+
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+    background-color: #fff;
+    width: 100%;
+    height: 0.2em;
+}
+
+.menu-link span:before,
+.menu-link span:after {
+    position: absolute;
+    margin-top: -0.6em;
+    content: " ";
+}
+
+.menu-link span:after {
+    margin-top: 0.6em;
+}
+
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        padding-left: 190px;
+        left: 0;
+    }
+    #menu {
+        left: 190px;
+    }
+
+    .menu-link {
+        position: fixed;
+        left: 190px;
+        display: none;
+    }
+
+    #layout.active .menu-link {
+        left: 190px;
+    }
+}
+
+@media (max-width: 48em) {
+    #layout.active {
+        position: relative;
+        left: 190px;
+    }
+}
