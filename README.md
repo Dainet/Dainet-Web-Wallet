@@ -38,7 +38,7 @@ var walletconfig = {
 ```
 
 
-##Security
+## Security
 
 Dainet Wallet has not been through a comprehensive security review at this point and is still in experimental mode. 
 Do not rely on it to store larger amounts of Ether or tokens yet.
