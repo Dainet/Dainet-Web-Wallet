@@ -52,7 +52,7 @@ try {
         function bindEvents() {
 
             erc20 = getAbi();
-            minimumEth = 0.001;
+            minimumEth = 0.0005;
 
             keystore = localGet('keystore');
             if (keystore) {
