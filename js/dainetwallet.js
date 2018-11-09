@@ -349,7 +349,7 @@ try {
                         var signedTx = lightwallet.signing.signTx(keystore, pwDerivedKey, registerTx, openkey);
                         $.ajax({
                             method: "GET",
-                            url: config.etherscan_api + "/api?module=proxy&action=eth_sendRawTransaction&hex=" + "0x" + signedTx + "&apikey=YourApiKeyToken",
+                            url: config.etherscan_api + "/api?module=proxy&action=eth_sendRawTransaction&hex=" + "0x" + signedTx + "&apikey=" + config.etherscan_api_key,
                             success: function (data) {
 
                                 if (typeof data.error != "undefined") {
