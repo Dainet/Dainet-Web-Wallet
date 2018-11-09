@@ -21,7 +21,7 @@ As ERC20 tokens need a small amount of Ether to make transfers, the wallet also 
 
 2. Go to the `js` directory and copy config_dist.js to config.js
 
-3. Update config.js to your contract information as well as etherscan api key (for ropsten you can leave text key).
+3. Update config.js to your contract information, gas price and limit as well as etherscan api key (for ropsten you can leave it).
 
 ```
 var walletconfig = {
@@ -32,8 +32,8 @@ var walletconfig = {
     etherscan_api: 'https://api.etherscan.io', // https://api.etherscan.io || https://ropsten.etherscan.io for test
     etherscan_api_key: 'YourApiKey',
     password: '', 
-    gas_price: 1,
-    gas_limit: 350000
+    gas_price: 8,
+    gas_limit: 90000
 };
 ```
 
