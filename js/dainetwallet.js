@@ -371,7 +371,6 @@ try {
                             success: function (data) {
 
                                 if (typeof data.error != "undefined") {
-                                    console.log(data.error.message);
                                     if (data.error.message.match(/Insufficient fund/)) {
                                         showTransferResult("Error: you must have a small amount of Ether in your account in order to cover the cost of gas (transaction fee). Add " + minimumEth + " ETH to your account and try again.", "danger");
                                         return;
