@@ -41,7 +41,7 @@ SOFTWARE.
         <script src="js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
         <script>
             if (location.protocol != 'https:') {
-                location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
+                //location.href = 'https:' + window.location.href.substring(window.location.protocol.length);
             }
         </script>
     </head>
@@ -163,6 +163,15 @@ SOFTWARE.
                                     <br />
                                     Amount Dains(s): <br />
                                     <input type="text" id="tokenAmount" class="form-control" placeholder="0.000000" value="">
+                                    
+                                    <div>
+                                        <span onclick="$('#gasPriceDiv').toggle();" class="pointer pull-right"><i class="fa fa-cog"></i></span>
+                                        <div id="gasPriceDiv">
+                                        Gas Price (in Gwei, recommended 5 - 40): <br />
+                                        <input type="text" id="gasPrice" class="form-control" placeholder="0.000000" value="">
+                                        </div>
+                                    </div>
+                                    
                                     <div class="is-center">
                                         <button id="sendButton" class="pure-button pure-button-primary"><i class="fa fa-bolt"></i> Send</button>
                                     </div>

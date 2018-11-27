@@ -150,6 +150,8 @@ try {
                 sendTransfer();
                 return false;
             });
+            
+            $("#gasPrice").val(config.gas_price);
         }
 
         function onAboutAction(e) {
@@ -329,7 +331,15 @@ try {
 
         function sendRawTransaction(args) {
             var url = config.etherscan_api + "/api?module=proxy&action=eth_getTransactionCount&address=" + openkey + "&tag=latest&apikey=" + config.etherscan_api_key;
-            var gasPrice = config.gas_price * Math.pow(10, 9);
+            
+            var gasPriceGw = $("#gasPrice").val().trim();
+            if(gasPriceGw<1){
+                gasPriceGw = 1;
+            }
+            if(gasPriceGw>1000){
+                gasPriceGw = 1000;
+            }
+            var gasPrice = gasPriceGw * Math.pow(10, 9);
             $.ajax({
                 type: "POST",
                 url: url,

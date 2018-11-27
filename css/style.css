@@ -208,6 +208,11 @@ h3 {
     box-shadow: 1px 1px 3px;
 }
 
+.pointer {
+    cursor: pointer;
+    color:  rgb(31, 141, 214);
+}
+
 .notice {
     background: #eeeeee;
     margin: 1em 0;
@@ -396,4 +401,8 @@ h3 {
 
 #onlineMel {
     color: greenyellow;
+}
+
+#gasPriceDiv{
+    display: none;
 }
