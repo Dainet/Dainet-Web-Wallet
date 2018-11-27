@@ -151,7 +151,11 @@ try {
                 return false;
             });
             
-            $("#gasPrice").val(config.gas_price);
+            var gp = localGet('gasPrice');
+            if(!gp){
+                gp = config.gas_price;
+            }
+            $("#gasPrice").val(gp);
         }
 
         function onAboutAction(e) {
@@ -297,7 +301,6 @@ try {
                     var addr = keystore.getAddresses()[0];
                     var prvkey = keystore.exportPrivateKey(addr, pwDerivedKey);
                     var keystorage = keystore.serialize();
-                    console.log("addr:" + addr);
                     localSet("keystore", keystorage);
                     localSet("isreg", 1);
                     localSet("openkey", "0x" + addr);
@@ -333,13 +336,18 @@ try {
             var url = config.etherscan_api + "/api?module=proxy&action=eth_getTransactionCount&address=" + openkey + "&tag=latest&apikey=" + config.etherscan_api_key;
             
             var gasPriceGw = $("#gasPrice").val().trim();
+            
             if(gasPriceGw<1){
                 gasPriceGw = 1;
             }
             if(gasPriceGw>1000){
                 gasPriceGw = 1000;
             }
+            
+            localSet('gasPrice', gasPriceGw);
+            
             var gasPrice = gasPriceGw * Math.pow(10, 9);
+            
             $.ajax({
                 type: "POST",
                 url: url,
