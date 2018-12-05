@@ -2,6 +2,8 @@
 
 Dainet Wallet is a minimal ERC20 token javascript wallet, based on eth-lightwallet.
 
+[https://wallet.dain.network](https://wallet.dain.network)
+
 ## About
 
 Dainet Wallet is a HD wallet that can store your keystore in the browser.
